@@ -1,0 +1,30 @@
+<% if resume.errors.any? %>
+  <ul>
+  <% resume.errors.full_messages.each do |meassage| %>
+    <li>
+      <%= meassage%>
+    </li>
+  </ul>
+  <% end %>
+<% end %>
+
+
+<%= form_with(model: resume) do |form| %>
+  <div>
+    <%= form.label :title, "標題"%>
+    <%= form.text_field :title, autocomplete: "off" %>
+  </div>
+  
+  <div>
+    <%= form.label :content, "履歷"%>
+    <%= form.text_area :content, autocomplete: "off" %>
+  </div>
+
+  <div>
+    <%= form.label :status, "狀態"%>
+    <%= form.select :status,[[ "草稿", "draft" ], [ "公怖", "published" ]] %>
+  </div>  
+
+  <%= form.submit "送出"%>
+
+<% end %>

@@ -1,0 +1,10 @@
+<h1>首頁</h1>
+
+<%= link_to "新增履歷", new_resume_path %>
+
+<% @resumes.each_with_index do |resume, index| %>
+  <div>
+    <%="第 #{index+1} 份："%>
+    <%= link_to resume.title, resume_path(resume) %>
+  </div>
+<% end %>

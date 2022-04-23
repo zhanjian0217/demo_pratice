@@ -1,0 +1,19 @@
+<h1>檢視履歷</h1>
+
+<div>
+  標題：
+  <%= @resume.title %>
+</div>
+
+<div>
+  履歷：
+  <%= @resume.content %>
+</div>
+
+<div>
+  狀態：
+  <%= @resume.status %>
+</div>
+
+<%= link_to "編輯", edit_resume_path %>
+<%= link_to "刪除", resume_path, method: "delete", data: { confirm: "確定刪除？" } %>
